@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciay6q7sumvdp"]
+[gd_scene load_steps=5 format=3 uid="uid://ciay6q7sumvdp"]
 
+[ext_resource type="Script" uid="uid://hk4elweyf0qd" path="res://scripts/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://dtm3vm6buvfu2" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://u7hvalgps78o" path="res://scripts/Spawner.gd" id="2_rvslj"]
+[ext_resource type="PackedScene" uid="uid://w5to8bfq8etg" path="res://scenes/Enemy.tscn" id="4_rarhs"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_0bbpv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(641, 361)
@@ -11,3 +15,7 @@ position = Vector2(641, 361)
 
 [node name="Player" parent="." instance=ExtResource("1_elqb8")]
 position = Vector2(641, 363)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("2_rvslj")
+enemy_scene = ExtResource("4_rarhs")
