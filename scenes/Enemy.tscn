@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://w5to8bfq8etg"]
+[gd_scene load_steps=5 format=3 uid="uid://w5to8bfq8etg"]
 
 [ext_resource type="Script" uid="uid://pnbrm12mkk14" path="res://scripts/Enemy.gd" id="1_3gvst"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2qkhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gvst"]
-size = Vector2(12, 18)
+size = Vector2(10, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55jtl"]
+size = Vector2(10, 16)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_3gvst")
@@ -17,3 +20,8 @@ texture = SubResource("PlaceholderTexture2D_2qkhh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3gvst")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_55jtl")
