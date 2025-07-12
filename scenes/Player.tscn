@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtm3vm6buvfu2"]
+[gd_scene load_steps=5 format=3 uid="uid://dtm3vm6buvfu2"]
 
 [ext_resource type="Script" uid="uid://bxyanngb43sly" path="res://scripts/Player.gd" id="1_p0vlq"]
+[ext_resource type="PackedScene" uid="uid://cs5c7nsgpr234" path="res://scenes/Bullet.tscn" id="2_v6fml"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v6fml"]
 
@@ -8,6 +9,7 @@
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_p0vlq")
+bullet_scene = ExtResource("2_v6fml")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, 6.55651e-07)

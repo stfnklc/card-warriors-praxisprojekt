@@ -5,9 +5,9 @@ var current_wave: int = 1
 var base_count: int = 5
 
 func _ready():
-	# Hook up the “wave cleared” signal so we can spawn the next wave
-	spawner.connect("wave_cleared", Callable(self, "_on_wave_cleared"))
+	spawner.wave_cleared.connect(_on_wave_cleared)
 	_start_wave()
+
 
 func _start_wave():
 	spawner.enemy_count = base_count * current_wave

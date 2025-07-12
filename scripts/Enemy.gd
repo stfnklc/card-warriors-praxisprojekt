@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
 @export var speed: float = 100.0
-var target: Node2D  # we’ll assign this at spawn time
+@export var max_hp := 3
+var hp := max_hp
+
+var target: Node2D  
 
 func _physics_process(_delta):
 	if not target:
@@ -10,3 +13,8 @@ func _physics_process(_delta):
 	if dir.length() > 0:
 		velocity = dir.normalized() * speed
 		move_and_slide()
+		
+func take_damage(dmg: int):
+	hp -= dmg
+	if hp <= 0:
+		queue_free()
