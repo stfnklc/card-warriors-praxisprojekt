@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4x7hx3jxdr2b"]
+
+[ext_resource type="Script" uid="uid://eebd6245jij0" path="res://scripts/FlashcardInput.gd" id="1_te5xp"]
+
+[node name="FlashcardInput" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_te5xp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Enter Flashcards (Question & Answer)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestionInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="AnswerInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="AddButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="FlashcardList" type="ItemList" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"

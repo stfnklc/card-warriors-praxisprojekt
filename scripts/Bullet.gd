@@ -5,6 +5,8 @@ extends Area2D
 @export var lifetime: float = 2.0  # seconds
 
 var time_alive := 0.0
+var shooter : Node = null  
+
 
 func _physics_process(delta):
 	position += direction.normalized() * speed * delta
@@ -16,6 +18,9 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	if body is CharacterBody2D and body.has_method("take_damage"):
+	if body == shooter:
+		return  
+
+	if body.has_method("take_damage"):
 		body.take_damage(1)
 		queue_free()

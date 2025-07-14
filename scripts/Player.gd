@@ -34,6 +34,7 @@ func shoot():
 	var mouse_pos = get_global_mouse_position()
 	bullet.global_position = global_position
 	bullet.direction = (mouse_pos - global_position).normalized()
+	bullet.shooter = self
 	get_tree().current_scene.add_child(bullet)
 	
 func take_damage(damage: int):
@@ -44,3 +45,10 @@ func take_damage(damage: int):
 
 func die():
 	print("Player died!")
+	var main = get_tree().current_scene
+	main.spawner.wave_cleared.disconnect(main._on_wave_cleared)
+	main.flashcard_popup.answered.disconnect(main._on_flashcard_answered)
+	call_deferred("_deferred_restart")
+	
+func _deferred_restart():
+	get_tree().change_scene_to_file("res://scenes/FlashcardInput.tscn")

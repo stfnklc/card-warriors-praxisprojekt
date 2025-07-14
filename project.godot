@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Card Warriors Praxisprojekt"
-run/main_scene="uid://ciay6q7sumvdp"
+run/main_scene="uid://c4x7hx3jxdr2b"
 config/features=PackedStringArray("4.4", "Mobile")
 
 [display]

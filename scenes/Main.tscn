@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciay6q7sumvdp"]
+[gd_scene load_steps=6 format=3 uid="uid://ciay6q7sumvdp"]
 
 [ext_resource type="Script" uid="uid://hk4elweyf0qd" path="res://scripts/Main.gd" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://dtm3vm6buvfu2" path="res://scenes/Player.tscn" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://u7hvalgps78o" path="res://scripts/Spawner.gd" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://w5to8bfq8etg" path="res://scenes/Enemy.tscn" id="4_rarhs"]
+[ext_resource type="PackedScene" uid="uid://cie2m0mdbf331" path="res://scenes/FlashcardPopup.tscn" id="5_vcsgt"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0bbpv")
@@ -19,3 +20,5 @@ position = Vector2(0, -2)
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("2_rvslj")
 enemy_scene = ExtResource("4_rarhs")
+
+[node name="FlashcardPopup" parent="." instance=ExtResource("5_vcsgt")]
