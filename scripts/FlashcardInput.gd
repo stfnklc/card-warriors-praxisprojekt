@@ -21,9 +21,8 @@ func _on_add_flashcard():
 		answer_input.text = ""
 
 func _on_start_button_pressed():
-
 	var main_scene = preload("res://scenes/Main.tscn").instantiate()
-	main_scene.flashcards = flashcards.duplicate()
+	main_scene.set_flashcards(flashcards)
 	get_tree().root.add_child(main_scene)
 	get_tree().set_current_scene(main_scene)   
 	queue_free()

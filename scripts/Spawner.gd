@@ -11,7 +11,6 @@ func spawn_wave():
 	_alive_enemies.clear()
 	for i in range(enemy_count):
 		var enemy = enemy_scene.instantiate()
-		
 		var angle = randf() * TAU
 		enemy.position = Vector2(cos(angle), sin(angle)) * spawn_radius
 		enemy.target = get_parent().get_node("Player")

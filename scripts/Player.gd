@@ -5,11 +5,9 @@ extends CharacterBody2D
 @export var shoot_cooldown := 0.3
 var time_since_last_shot := 0.0
 
-
 @export var speed: float = 200.0
 @export var max_hp := 5
 var hp: int
-
 
 func _physics_process(delta):
 	var dir = Vector2.ZERO
@@ -24,10 +22,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot") and time_since_last_shot >= shoot_cooldown:
 		shoot()
 		time_since_last_shot = 0.0
-		
+
 func _ready():
 	hp = max_hp
-
 
 func shoot():
 	var bullet = bullet_scene.instantiate()

@@ -13,8 +13,6 @@ func _ready():
 	submit_button.pressed.connect(_on_submit_pressed)
 	hide()
 
-
-
 func show_flashcard(flashcard: Dictionary):
 	if get_tree() == null:
 		return
@@ -27,7 +25,6 @@ func show_flashcard(flashcard: Dictionary):
 func _on_submit_pressed():
 	var answer = answer_input.text.strip_edges().to_lower()
 	var correct_answer = current_flashcard.answer.strip_edges().to_lower()
-	
 	var is_correct = (answer == correct_answer)
 	hide()
 	get_tree().paused = false
